@@ -1,12 +1,13 @@
+import { GameCard, Header, Rules } from "./Components"
 
 function App() {
 
   return (
-    <>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="p-10">
+      <Header />
+      <GameCard />
+      <Rules />
+    </div>
   )
 }
 
