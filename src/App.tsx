@@ -1,4 +1,4 @@
-import { GameCard, Header, Rules } from "./Components"
+import { GameCard, Header, Rules, GameCardHandSelection } from "./Components"
 
 function App() {
 
@@ -6,6 +6,7 @@ function App() {
     <div className="p-10">
       <Header />
       <GameCard />
+      <GameCardHandSelection />
       <Rules />
     </div>
   )

@@ -1,5 +1,8 @@
+import { useContext } from "react"
+import { ColorContext } from "../Context"
 
 export const Header = () => {
+    const { score } = useContext(ColorContext);
     return (
         <div className="flex justify-center mb-32">
             <header className='flex p-5 justify-between w-[60%] border-2 border-header-outline rounded-[12px]'>
@@ -11,7 +14,7 @@ export const Header = () => {
 
                 <div className='font-extrabold p-2 bg-white  w-[120px] rounded-lg text-center'>
                     <p className='text-score-text'>SCORE</p>
-                    <p className='text-[32px] text-dark-text'>0</p>
+                    <p className='text-[32px] text-dark-text'>{score}</p>
                 </div>
             </header>
         </div>
