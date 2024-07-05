@@ -1,1 +1,1 @@
-export * from "./ColorContext";
+export * from "./GameContext";

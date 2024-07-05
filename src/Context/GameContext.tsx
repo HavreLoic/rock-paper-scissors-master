@@ -5,7 +5,7 @@ type gameObject = {
   gradient: string;
 }
 
-type ColorContextType = {
+type GameContextType = {
   rockHand: gameObject;
   paperHand: gameObject;
   scissorsHand: gameObject;
@@ -14,8 +14,10 @@ type ColorContextType = {
   playerGradient: string;
   computerHand: string,
   score: number;
+  gameSectionUI: boolean;
   computerGradient: string,
   setComputerHand: (computer: string) => void;
+  setGameSectionUI: (showUI: boolean) => void;
   setComputerGradient: (gradient: string) => void;
   setPlayerHand: (hand: string) => void;
   setPlayerGradient: (gradient: string) => void;
@@ -24,7 +26,7 @@ type ColorContextType = {
   determineOuterCircleColorBasedOnImage: (img: string) => void;
 };
 
-export const ColorContext = createContext<ColorContextType>({
+export const GameContext = createContext<GameContextType>({
   scissorsHand: {
     gradient: "",
     image: ""
@@ -46,6 +48,8 @@ export const ColorContext = createContext<ColorContextType>({
   computerHand: "",
   computerGradient: "",
   score: 0,
+  gameSectionUI: true,
+  setGameSectionUI: () => { },
   setComputerHand: () => { },
   setComputerGradient: () => { },
   generateComputerHand: () => { },
@@ -55,7 +59,7 @@ export const ColorContext = createContext<ColorContextType>({
   determineOuterCircleColorBasedOnImage: () => { },
 });
 
-export const ColorContextProvider = ({
+export const GameContextProvider = ({
   children,
 }: {
   children: JSX.Element;
@@ -78,6 +82,7 @@ export const ColorContextProvider = ({
   const [computerGradient, setComputerGradient] = useState("");
   const [gameStatus, setGameStatus] = useState("");
   const [score, setScore] = useState(0);
+  const [gameSectionUI, setGameSectionUI] = useState(true);
 
   const determineWinner = () => {
     if (playerHand !== "" && computerHand !== "") {
@@ -114,6 +119,7 @@ export const ColorContextProvider = ({
         }
       }
     }
+    setGameSectionUI(!gameSectionUI)
   };
 
   const generateComputerHand = () => {
@@ -160,7 +166,7 @@ export const ColorContextProvider = ({
   }, [computerHand]);
 
   return (
-    <ColorContext.Provider
+    <GameContext.Provider
       value={{
         rockHand,
         gameStatus,
@@ -171,6 +177,8 @@ export const ColorContextProvider = ({
         computerHand,
         playerGradient,
         computerGradient,
+        gameSectionUI,
+        setGameSectionUI,
         setPlayerGradient,
         setPlayerHand,
         setComputerHand,
@@ -181,6 +189,6 @@ export const ColorContextProvider = ({
       }}
     >
       {children}
-    </ColorContext.Provider>
+    </GameContext.Provider>
   );
 };

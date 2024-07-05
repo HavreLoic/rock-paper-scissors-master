@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import { ColorContext } from "../Context"
+import { GameContext } from "../Context"
 
 export const Header = () => {
-    const { score } = useContext(ColorContext);
+    const { score } = useContext(GameContext);
     return (
         <div className="flex justify-center mb-32">
             <header className='flex p-5 justify-between w-[60%] border-2 border-header-outline rounded-[12px]'>

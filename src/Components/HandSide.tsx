@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { ColorContext } from "../Context";
+import { GameContext } from "../Context";
 
 type HandSideType = {
     imageSrc: string;
@@ -9,7 +9,7 @@ type HandSideType = {
 }
 
 export const HandSide = ({ side, imageSrc, handCSS, eventIs = false }: HandSideType) => {
-    const { setPlayerHand, setPlayerGradient, determineOuterCircleColorBasedOnImage, generateComputerHand } = useContext(ColorContext);
+    const { setPlayerHand, setPlayerGradient, determineOuterCircleColorBasedOnImage, generateComputerHand } = useContext(GameContext);
 
     const onSelectHand = (src: string) => {
         setPlayerHand(src);

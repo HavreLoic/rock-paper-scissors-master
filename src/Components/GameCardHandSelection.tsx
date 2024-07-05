@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import { HandSide } from "./HandSide"
-import { ColorContext } from "../Context"
+import { GameContext } from "../Context"
 
 export const GameCardHandSelection = () => {
-    const { paperHand, rockHand, scissorsHand } = useContext(ColorContext);
+    const { paperHand, rockHand, scissorsHand } = useContext(GameContext);
 
     return (
         <div className="relative flex justify-center items-center">

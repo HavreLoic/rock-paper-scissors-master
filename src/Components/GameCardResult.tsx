@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { HandSide } from "./HandSide";
-import { ColorContext } from "../Context";
+import { GameContext } from "../Context";
 
 
 export const GameCard = () => {
-    const { playerGradient, playerHand, computerGradient, computerHand, gameStatus } = useContext(ColorContext);
+    const { playerGradient, playerHand, computerGradient, computerHand, gameStatus, gameSectionUI, setGameSectionUI } = useContext(GameContext);
+
+    const onClickPlay = () => {
+        setGameSectionUI(!gameSectionUI)
+    }
 
     return (
         <div className="flex text-white justify-evenly mb-10">
@@ -14,7 +18,7 @@ export const GameCard = () => {
 
             <div className="mt-auto mb-auto">
                 {gameStatus && <p className="font-extrabold text-[34px]">{gameStatus}</p>}
-                <button className="bg-white p-2 rounded-md w-full text-play-button-text">PLAY AGAIN</button>
+                <button onClick={onClickPlay} className="bg-white p-2 rounded-md w-full text-play-button-text">PLAY AGAIN</button>
             </div>
 
             <div>
