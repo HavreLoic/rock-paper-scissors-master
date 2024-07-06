@@ -24,9 +24,9 @@ export const HandSide = ({ side, imageSrc, handCSS, eventIs = false }: HandSideT
 
     return (
         <>
-            {side && <p className="font-medium text-[21px] mb-10 text-center">{side}</p>}
-            <div className={`${handCSS} rounded-full w-[130px] h-[130px] flex justify-center items-center`}>
-                <div className="w-[100px] h-[100px] bg-white rounded-full flex justify-center items-center">
+            {side && <p className="font-medium sm:text-[21px] xs:text-[14px] mb-10 text-center">{side}</p>}
+            <div className={`${handCSS} rounded-full xs:w-[90px] sm:w-[130px] xs:h-[90px] sm:h-[130px] flex justify-center items-center`}>
+                <div className="sm:w-[100px] xs:w-[70px] sm:h-[100px] xs:h-[70px] bg-white rounded-full flex justify-center items-center">
                     <img src={imageSrc} className="w-[50%] m-auto" alt={imageSrc} onClick={() => eventIs === true && onSelectHand(imageSrc)} />
                 </div>
             </div>

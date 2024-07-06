@@ -11,13 +11,13 @@ export const GameCard = () => {
     }
 
     return (
-        <div className="flex text-white justify-evenly mb-10">
+        <div className="flex text-white justify-evenly mb-10 media-phone-height">
             <div>
                 <HandSide handCSS={playerGradient} side="YOU PICKED" imageSrc={playerHand} />
             </div>
 
-            <div className="mt-auto mb-auto">
-                {gameStatus && <p className="font-extrabold text-[34px]">{gameStatus}</p>}
+            <div className="mt-auto sm:mb-auto xs:mb-0">
+                {gameStatus && <p className="font-extrabold xs:text-[21px] sm:text-[34px] text-center">{gameStatus}</p>}
                 <button onClick={onClickPlay} className="bg-white p-2 rounded-md w-full text-play-button-text">PLAY AGAIN</button>
             </div>
 

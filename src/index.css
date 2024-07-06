@@ -25,3 +25,9 @@
   .cyan {
     background-image: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
   }
+
+  @media (max-width: 475px) {
+    .media-phone-height {
+        height: 75vh;
+    }
+}

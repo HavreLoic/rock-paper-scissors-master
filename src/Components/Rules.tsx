@@ -6,10 +6,10 @@ export const Rules = () => {
 
     return (
         <div className='text-right'>
-            <button className='border-white border-[1px] font-medium text-white p-2 rounded-md w-[10%] tracking-widest' onClick={() => setIsOpen(true)}>RULES</button>
+            <button className='border-white border-[1px] font-medium text-white p-2 rounded-md xs:w-[25%] md:w-[15%] tracking-widest' onClick={() => setIsOpen(true)}>RULES</button>
             <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="relative z-50">
                 <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-                    <DialogPanel className="max-w-lg space-y-4 border bg-white p-12 rounded-lg">
+                    <DialogPanel className="md:max-w-[50%] xs:max-w-[75%] space-y-4 border bg-white p-12 rounded-lg">
                         <DialogTitle className="font-bold text-[32px] text-dark-text text-center">RULES</DialogTitle>
                         <Description className={"mb-10"}>
                             <img src="images/image-rules.svg" alt="rules" />
